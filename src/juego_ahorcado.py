@@ -31,7 +31,32 @@ def normalizar(cadena):
       Cadena de texto con la palabra normalizada
     """
     # TODO: Implementa esta función (y elimina la instrucción pass)
-    pass
+    texto = cadena.lower().strip()
+
+    texto = texto.replace("á", "a")
+    texto = texto.replace("é", "e")
+    texto = texto.replace("í", "i")
+    texto = texto.replace("ó", "o")
+    texto = texto.replace("ú", "u")
+    texto = texto.replace("Á", "A")
+    texto = texto.replace("É", "E")
+    texto = texto.replace("Í", "I")
+    texto = texto.replace("Ó", "O")
+    texto = texto.replace("Ú", "U")
+    texto = texto.replace("ä", "a")
+    texto = texto.replace("ë", "e")
+    texto = texto.replace("ï", "i")
+    texto = texto.replace("ö", "o")
+    texto = texto.replace("ü", "u")
+    texto = texto.replace("Ä", "A")
+    texto = texto.replace("Ë", "E")
+    texto = texto.replace("Ï", "I")
+    texto = texto.replace("Ö", "O")
+    texto = texto.replace("Ü", "U")
+
+    return texto
+
+
 
 def ocultar(palabra_secreta, letras_usadas=""):
     '''Devuelve una cadena de texto con la palabra enmascarada. 
@@ -45,7 +70,16 @@ def ocultar(palabra_secreta, letras_usadas=""):
       Cadena de texto con la palabra enmascarada
     '''
     # TODO: Implementa esta función (y elimina la instrucción pass)
-    pass
+    resultado = ""
+    for letra in palabra_secreta:
+        if letra in letras_usadas:
+            resultado += letra
+        else:
+            resultado += "_"
+
+    return resultado
+            
+
 
 
 def ha_ganado(palabra_enmascarada):
@@ -58,10 +92,17 @@ def ha_ganado(palabra_enmascarada):
     - True si el jugador ha ganado, False en caso contrario
     '''
     # TODO: Implementa esta función (y elimina la instrucción pass)
-    pass
-
+    abecedario = "abcdefghijklmnñopqrtukvwxyz"
+    for letra in palabra_enmascarada.lower():
+        if letra not in abecedario:
+            return(False)
+    return(True)
 
 # TODO: Implementa la función mostrar_estado
+def mostrar_estado(palabra_enmascarada, letras_usadas, intentos_restantes):
+    abecedario = "abcdefghijklmnñopqrtukvwxyz"
+    for letras_usadas in abecedario:
+        if letras_usadas 
 
 # TODO: Implementa la función pedir_letra
 
